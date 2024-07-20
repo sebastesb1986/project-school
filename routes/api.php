@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 
 Route::controller(CategoriesController::class)->group(function (){
 
@@ -22,5 +23,13 @@ Route::controller(ProductController::class)->group(function (){
     Route::post('product/create', 'store');
     Route::put('product/update/{id}', 'update');
     Route::delete('product/{id}', 'delete');
+
+});
+
+Route::controller(UserController::class)->group(function (){
+
+    Route::get('users','index');
+    Route::get('user/{id}','edit');
+    Route::post('user/create', 'store');
 
 });

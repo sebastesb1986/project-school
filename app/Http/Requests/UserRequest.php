@@ -26,7 +26,7 @@ class UserRequest extends FormRequest
         $rules = [
             'name' => 'required|string|max:255',
             'email' => 'required',
-            'phone' => 'required|min:15',
+            'phone' => 'required|min:7',
         ];
         return $rules;
     }
@@ -48,9 +48,9 @@ class UserRequest extends FormRequest
         return [
 
             'name.required'=> 'El nombre de usuario es requerido',
-            'email.required'=> 'La Descripción del producto es requerida',
-            'phone.required'=> 'La cantidad para el producto es requerida',
-            'phone.min'=> 'La cantidad para el producto debe ser minimo 15',
+            'email.required'=> 'El correo electrónico del usuario es requerida',
+            'phone.required'=> 'El telefono del usuario es requerido',
+            'phone.min'=> 'La cantidad de digitos para teléfono debe ser mínimo 7',
 
         ];
     }
