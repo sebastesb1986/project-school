@@ -9,7 +9,7 @@
         <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/pricing/">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-        <link href="{{ asset('assets/css/bootstrap.min.css') }}"  rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link href="{{ secure_asset('assets/css/bootstrap.min.css') }}"  rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
         <!-- Favicons -->
         <meta name="theme-color" content="#712cf9">
@@ -95,7 +95,7 @@
 
 
         <!-- Custom styles for this template -->
-        <link href="{{ asset('assets/css/pricing.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('assets/css/pricing.css') }}" rel="stylesheet">
 
     </head>
     <body>
@@ -160,6 +160,6 @@
             <footer class="pt-4 my-md-5 pt-md-5 border-top">
             </footer>
         </div>
-        <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" ></script>
+        <script src="{{ secure_asset('assets/js/bootstrap.bundle.min.js') }}" ></script>
     </body>
 </html>
