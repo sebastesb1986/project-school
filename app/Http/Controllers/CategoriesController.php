@@ -167,9 +167,12 @@ class CategoriesController extends Controller
 
                 // Contar los productos en la categoría específica
                 $quantity = $category->product()->count();
+                $products = $category->product()->where('category_id', $category->id)->pluck('name')->toArray();
+
+                $result = "Total de productos en la categoría " . Str::upper($category->name) . ": " . $quantity . " (" . implode(', ', $products) . ")";
 
                 return response()->json([
-                    'quantity' => "Total de productos en la categoría " .Str::upper($category->name).": ".$quantity,
+                    'quantity' => $result
                 ], 200);
 
             } else {
