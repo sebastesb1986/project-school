@@ -89,7 +89,7 @@ class ProductController extends Controller
         catch(Exception $e){
 
             return response()->json([
-                'error' => "Error al registrar producto" . $e->getMessage(),
+                'error' => "Error al registrar producto"
             ], 500);
 
         }

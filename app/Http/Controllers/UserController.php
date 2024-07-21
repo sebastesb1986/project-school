@@ -72,14 +72,14 @@ class UserController extends Controller
     {
         try{
 
-            $product = new User();
+            $user = new User();
             $data = $request->validated();
-            $created = $product->create($data);
+            $created = $user->create($data);
 
             if($created){
 
                 return response()->json([
-                    'success' => "usuario registrado exitosamente"],
+                    'success' => "Tus datos han sido guardados"],
                 201);
 
             }
@@ -88,7 +88,7 @@ class UserController extends Controller
         catch(Exception $e){
 
             return response()->json([
-                'error' => "Error al registrar usuario" . $e->getMessage(),
+                'error' => "Error al registrar usuario"
             ], 500);
 
         }
