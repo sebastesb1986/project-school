@@ -15,5 +15,6 @@ export default defineConfig({
         brotliSize: true,
         sourcemap: false,
         manifest: true,
+        outDir: 'public/build/',
     },
 });
