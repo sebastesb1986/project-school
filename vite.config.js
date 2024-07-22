@@ -9,11 +9,5 @@ export default defineConfig({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             // No se recomienda usar refresh: true en producción
         }),
-    ],
-    build: {
-        minify: true,
-        brotliSize: true,
-        sourcemap: false,
-        manifest: true,
-    },
+    ]
 });
