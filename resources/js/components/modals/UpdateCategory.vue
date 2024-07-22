@@ -14,8 +14,8 @@
                     <p class="text-danger" v-if="validation.errors.name && validation.errors.name.length > 0">{{ validation.errors.name[0] }}</p>
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="col-form-label">Descripción</label>
-                    <input type="email" class="form-control" id="email" v-model="category.description" :class="{ 'is-invalid': validation.errors.description && validation.errors.description.length > 0 }" @input="clearError('description')">
+                    <label for="description" class="col-form-label">Descripción</label>
+                    <input type="text" class="form-control" id="description" v-model="category.description" :class="{ 'is-invalid': validation.errors.description && validation.errors.description.length > 0 }" @input="clearError('description')">
                     <p class="text-danger" v-if="validation.errors.description && validation.errors.description.length > 0">{{ validation.errors.description[0] }}</p>
                 </div>
 
@@ -126,6 +126,7 @@ export default {
     data: {
       handler(newValue) {
         this.category = { ...newValue }; // Cargar y refresh datos en la ventana modal
+        console.log("aqui:"+this.category.name);
       },
       deep: true
     }
