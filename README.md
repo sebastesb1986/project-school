@@ -23,6 +23,12 @@ Para agregar productos y categorías, utiliza las siguientes credenciales en la 
 - Vue 3 (integrado dentro del framework Laravel)
 - JavaScript
 
+## Agregación a un sitio personalizado
+
+Si deseas agregar esta interacción a tu aplicación web en caso de ser util, agrega en tu html(personalizado acorde a tus necesidades):
+
+<iframe height="430" width="350" src="https://bot.dialogflow.com/a91687cc-b3d3-4bfa-b1bc-e19ffb482f90"></iframe>
+
 ## Utilización de la herramienta
 
 Una vez nos encontremos bien sea [Genuine Digital School Demo](https://salgado-school-30c338bdf4e3.herokuapp.com) o en http://127.0.0.1:8000, se nos abrira una 
