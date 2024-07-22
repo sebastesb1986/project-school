@@ -125,7 +125,7 @@ export default {
   watch: {
     data: {
       handler(newValue) {
-        this.category = { ...newValue }; // Cargar y refresh datos en la ventana modal
+        this.category = { ...newValue }; // Cargar y hacer refresh datos en la ventana modal
       },
       deep: true
     }
