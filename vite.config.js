@@ -11,7 +11,8 @@ export default defineConfig({
         }),
     ],
     build: {
-
-        manifest: true,
+        minify: true,
+        brotliSize: true,
+        sourcemap: false,
     },
 });
