@@ -10,7 +10,7 @@ export default defineConfig({
         }),
     ],
     build: {
-        outDir: 'public/build/.vite', // Asegúrate de que esta ruta coincida con la configuración de Laravel
+        outDir: 'public/build/', // Asegúrate de que esta ruta coincida con la configuración de Laravel
         manifest: true,
         // Otros ajustes de construcción según tus necesidades
     },
