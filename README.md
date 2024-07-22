@@ -27,30 +27,66 @@ Para agregar productos y categorías, utiliza las siguientes credenciales en la 
 
 Si deseas implementar esta aplicación en tu entorno local, sigue estos pasos:
 
-1. Clona el repositorio.
+1. Clona el repositorio:
 
-2. Genera la clave de la aplicación y realiza las instalaciones necesarias.
+git clone https://github.com/sebastesb1986/project-school.git
 
-3. Genera la clave secreta para JWT.
 
-4. Copia el archivo `.env.example` a `.env` y configura tu entorno local.
+2. Genera la clave de la aplicación y realiza las instalaciones necesarias:
 
-5. Ejecuta las migraciones y los seeders.
+php artisan key
+composer install
+npm install
 
-6. Configura `vite.config.js` dentro de `resources/js/app.js`.
 
-7. Actualiza la configuración de axios en `resources/js/app.js` para el entorno local.
+3. Genera la clave secreta para JWT:
 
-8. Inicia el servidor de desarrollo y el servidor de Laravel.
+php artisan vendor --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+php artisan jwt
 
-9. Accede a la aplicación desde tu navegador.
 
-## Utilización de la herramienta
+4. Copia el archivo `.env.example` a `.env` y configura tu entorno local:
 
-Una vez en la demo o en tu entorno local, se abrirá una ventana de chat. Comienza con un saludo (por ejemplo, "hola" o "hi") y recibirás un mensaje de bienvenida. Podrás interactuar eligiendo una categoría y ver los productos disponibles.
+DB_CONNECTION=mysql
+DB_HOST=TU HOST
+DB_PORT=TU PUERTO
+DB_DATABASE=d48fgtdaq01a04
+DB_USERNAME=TU USERNAME
+DB_PASSWORD=TU_PASSWORD
 
-¡Es sencillo! Todo está diseñado para ser intuitivo y fácil de usar.
 
-Para cualquier consulta o comentario, contáctame en [salgadosb1986@gmail.com](mailto:salgadosb1986@gmail.com). Te brindaré soporte en el menor tiempo posible.
+5. Ejecuta las migraciones y los seeders:
 
-¡Saludos!
+php artisan migrate --seed
+
+
+6. Configura `vite.config.js` dentro de `resources/js/app.js`:
+
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+import vue from '@vitejs/plugin-vue';
+
+export default defineConfig({
+    plugins: [
+        vue(),
+        laravel({
+            input: ['resources/css/app.css', 'resources/js/app.js'],
+            refresh: true
+        }),
+    ],
+});
+
+7. Actualiza la configuración de axios en resources/js/app.js para el entorno local:
+
+axios.defaults.baseURL = 'http://127.0.0.1:8000/api';
+
+8. Inicia el servidor de desarrollo y el servidor de Laravel:
+
+php artisan serve
+npm run dev
+
+9. Accede a la aplicación desde tu navegador:
+
+Sitio principal: http://127.0.0.1:8000
+Panel de administración: http://127.0.0.1:8000/admin
+
