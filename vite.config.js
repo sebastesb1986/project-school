@@ -7,7 +7,12 @@ export default defineConfig({
         vue(),
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
-            refresh: true,
+            // No se recomienda usar refresh: true en producción
         }),
     ],
+    build: {
+        minify: true,
+        brotliSize: true,
+        sourcemap: false,
+    },
 });
