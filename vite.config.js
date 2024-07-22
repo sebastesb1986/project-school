@@ -11,7 +11,7 @@ export default defineConfig({
     ],
     build: {
         outDir: 'public/build/', // Asegúrate de que esta ruta coincida con la configuración de Laravel
-        manifest: true,
+        manifest: 'manifest.json',
         // Otros ajustes de construcción según tus necesidades
     },
 });
