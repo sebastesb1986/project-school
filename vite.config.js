@@ -7,7 +7,7 @@ export default defineConfig({
         vue(),
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
-            // No se recomienda usar refresh: true en producción
+            refresh: false,
         }),
-    ]
+    ],
 });
