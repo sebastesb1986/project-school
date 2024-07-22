@@ -118,7 +118,7 @@
         }
       },
       editCategory(rowData) {
-        this.selectedUser = { ...rowData }; // Make a copy to avoid mutating original data
+        this.selectedCategory = { ...rowData }; // Make a copy to avoid mutating original data
       },
       confirmDelete(id) {
 
