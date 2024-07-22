@@ -5,10 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Aplicación</title>
-        @vite('resources/css/app.css')
+        @vite('resources/css/app.css', $mode = 'development', $ref = true)
     </head>
     <body>
         <div id="app"></div>
-        @vite('resources/js/app.js')
+        @vite('resources/js/app.js', $mode = 'development', $ref = true)
     </body>
 </html>
