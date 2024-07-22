@@ -6,8 +6,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Tymon\JWTAuth\Contracts\JWTSubject;
+use Illuminate\Support\Facades\Hash;
 
-class User extends Authenticatable
+class User extends Authenticatable implements JWTSubject
 {
     use HasFactory, Notifiable;
 
@@ -20,6 +22,7 @@ class User extends Authenticatable
         'name',
         'email',
         'phone',
+        'password'
     ];
 
     public $timestamps = false;
@@ -46,4 +49,43 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+     // JWT
+     public function getJWTIdentifier()
+     {
+         return $this->getKey();
+     }
+
+     /**
+      * Return a key value array, containing any custom claims to be added to the JWT.
+      *
+      * @return array
+      */
+     public function getJWTCustomClaims()
+     {
+         return [];
+     }
+
+     // Encriptar contraseña
+     public function setPasswordAttribute($password)
+     {
+
+         if(!empty($password)){
+
+             if (Hash::needsRehash($password)) {
+
+                 $this->attributes['password'] = Hash::make($password);
+
+             }
+
+             else {
+
+                 $this->attributes['password'] = $password;
+
+             }
+
+         }
+
+     }
+
 }

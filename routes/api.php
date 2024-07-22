@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Auth\AuthController;
 
 Route::controller(CategoriesController::class)->group(function (){
 
@@ -31,5 +32,26 @@ Route::controller(UserController::class)->group(function (){
     Route::get('users','index');
     Route::get('user/{id}','edit');
     Route::post('user/create', 'store');
+
+});
+
+
+// Iniciar sesión
+Route::post('login', [AuthController::class, 'login']);
+
+Route::group([
+
+    'middleware' => 'auth:api',
+    'prefix' => 'auth'
+
+], function ($router) {
+
+    // Autenticación
+    Route::controller(AuthController::class)->group(function () {
+
+        Route::post('logout', 'logout');
+        Route::post('refresh', 'refresh');
+        Route::get('me', 'me');
+    });
 
 });

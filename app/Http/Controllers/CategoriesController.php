@@ -17,7 +17,7 @@ class CategoriesController extends Controller
     {
         try{
 
-            $categories = Category::select('name', 'description')->get();
+            $categories = Category::select('id', 'name', 'description')->get();
 
             if($categories){
 

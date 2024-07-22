@@ -15,7 +15,9 @@ class ProductController extends Controller
     {
         try{
 
-            $products = Product::select('name', 'description', 'quantity', 'category_id')->get();
+            $products = Product::with('categories:id,name')
+                                ->select('id', 'name', 'description', 'quantity', 'category_id')
+                                ->get();
 
             if($products){
 
