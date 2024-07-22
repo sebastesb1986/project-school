@@ -92,7 +92,7 @@ Panel de administración: http://127.0.0.1:8000/admin
 
 10. Utilización de la herramienta
 
-- Una vez nos encontremos bien sea https://salgado-school-30c338bdf4e3.herokuapp.com o en http:127.0.0.1:8000, se nos abrira una 
+Una vez nos encontremos bien sea [Genuine Digital School Demo](https://salgado-school-30c338bdf4e3.herokuapp.com) o en http://127.0.0.1:8000, se nos abrira una 
 ventana de chat en donde comenzaremos interactuando con un saludo(por ejemplo hola, hi), entonces nos arrojara el mensaje: ¿Bienvenido! tengo productos en oferta, te interesan?
 contestamos sea con si, claro, por supuesto,nos hara elegir una categoria, digitamos la categoria y finalmente nos enseñara cuantos productos tiene la misma y cuales son.
 
