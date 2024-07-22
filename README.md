@@ -23,6 +23,16 @@ Para agregar productos y categorías, utiliza las siguientes credenciales en la 
 - Vue 3 (integrado dentro del framework Laravel)
 - JavaScript
 
+## Utilización de la herramienta
+
+Una vez nos encontremos bien sea [Genuine Digital School Demo](https://salgado-school-30c338bdf4e3.herokuapp.com) o en http://127.0.0.1:8000, se nos abrira una 
+ventana de chat en donde comenzaremos interactuando con un saludo(por ejemplo hola, hi), entonces nos arrojara el mensaje: ¿Bienvenido! tengo productos en oferta, te interesan?
+contestamos sea con si, claro, por supuesto,nos hara elegir una categoria, digitamos la categoria y finalmente nos enseñara cuantos productos tiene la misma y cuales son.
+
+Es sencillo! todo esta realizado lo ma sintuitivo para ser manejado facilmente.
+
+Cualquier inquietud u observación puedes escribirme a salgadosb1986@gmail.com, en cuanto pueda te brindare el soporte para el caso en el menor tiempo posible.
+
 ## Pasos de instalación en un entorno local
 
 Si deseas implementar esta aplicación en tu entorno local, sigue estos pasos:
@@ -47,7 +57,7 @@ php artisan jwt
 
 4. Copia el archivo `.env.example` a `.env` y configura tu entorno local:
 
-\`\`\`plaintext
+```plaintext
 DB_CONNECTION=mysql
 DB_HOST=TU HOST
 DB_PORT=TU PUERTO
@@ -90,16 +100,5 @@ npm run dev
 
 Sitio principal: http://127.0.0.1:8000
 Panel de administración: http://127.0.0.1:8000/admin
-\`\`\`
-
-10. Utilización de la herramienta
-
-Una vez nos encontremos bien sea [Genuine Digital School Demo](https://salgado-school-30c338bdf4e3.herokuapp.com) o en http://127.0.0.1:8000, se nos abrira una 
-ventana de chat en donde comenzaremos interactuando con un saludo(por ejemplo hola, hi), entonces nos arrojara el mensaje: ¿Bienvenido! tengo productos en oferta, te interesan?
-contestamos sea con si, claro, por supuesto,nos hara elegir una categoria, digitamos la categoria y finalmente nos enseñara cuantos productos tiene la misma y cuales son.
-
-Es sencillo! todo esta realizado lo ma sintuitivo para ser manejado facilmente.
-
-Cualquier inquietud u observación puedes escribirme a salgadosb1986@gmail.com, en cuanto pueda te brindare el soporte para el caso en el menor tiempo posible.
 
 Saludos.
