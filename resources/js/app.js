@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
 
-axios.defaults.baseURL = 'https://salgado-school-30c338bdf4e3.herokuapp.com/';
+axios.defaults.baseURL = 'https://salgado-school-30c338bdf4e3.herokuapp.com';
 
 store.dispatch('auth/attempt', localStorage.getItem('token'))
 .then( ()=> {
