@@ -7,7 +7,9 @@ export default defineConfig({
         vue(),
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
-            refresh: false,
+            mode: 'production',
+            extract: true, // Extraer CSS en un archivo separado
+            minify: true,
         }),
     ],
 });
