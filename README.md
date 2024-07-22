@@ -47,6 +47,7 @@ php artisan jwt
 
 4. Copia el archivo `.env.example` a `.env` y configura tu entorno local:
 
+```plaintext
 DB_CONNECTION=mysql
 DB_HOST=TU HOST
 DB_PORT=TU PUERTO
@@ -62,6 +63,7 @@ php artisan migrate --seed
 
 6. Configura `vite.config.js` dentro de `resources/js/app.js`:
 
+```javascript
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
