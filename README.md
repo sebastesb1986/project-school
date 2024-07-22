@@ -1,66 +1,98 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>README - Genuine Digital School</title>
+    </head>
+    <body>
+        <h1>Genuine Digital School - Proyecto Desplegable Prueba</h1>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+        <h2>Descripción</h2>
+        <p>Este proyecto facilita la interacción entre DialogFlow y el framework Laravel 11.</p>
 
-## About Laravel
+        <h2>Ver demo</h2>
+        <p>Puedes ver una demostración del proyecto en <a href="https://salgado-school-30c338bdf4e3.herokuapp.com" target="_blank">Genuine Digital School Demo</a>.</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+        <h2>Cómo añadir elementos</h2>
+        <p>Para agregar productos y categorías, utiliza las siguientes credenciales en la URL <a href="https://salgado-school-30c338bdf4e3.herokuapp.com/admi" target="_blank">Admin Genuine Digital School</a>:</p>
+        <ul>
+            <li><strong>Credenciales:</strong></li>
+            <li>Email: admin2024@gmailcom</li>
+            <li>Contraseña: admin1234</li>
+        </ul>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+        <h2>Tecnologías utilizadas</h2>
+        <ul>
+            <li>Framework PHP Laravel 11</li>
+            <li>PHP 8.2</li>
+            <li>Vue 3 (integrado dentro del framework Laravel)</li>
+            <li>JavaScript</li>
+        </ul>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+        <h2>Pasos de instalación en un entorno local</h2>
+        <p>Si deseas implementar esta aplicación en tu entorno local, sigue estos pasos:</p>
+        <ol>
+            <li>Clona el repositorio:</li>
+            <pre><code>git clone https://github.com/sebastesb1986/project-school.git</code></pre>
 
-## Learning Laravel
+            <li>Genera la clave de la aplicación y realiza las instalaciones necesarias:</li>
+            <pre><code>php artisan key:generate</code></pre>
+            <pre><code>composer install</code></pre>
+            <pre><code>npm install</code></pre>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+            <li>Genera la clave secreta para JWT:</li>
+            <pre><code>php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"</code></pre>
+            <pre><code>php artisan jwt:secret</code></pre>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+            <li>Copia el archivo <code>.env.example</code> a <code>.env</code> y configura tu entorno local:</li>
+            <pre>
+                <code>DB_CONNECTION=mysql
+                DB_HOST=TU HOST
+                DB_PORT=TU PUERTO
+                DB_DATABASE=d48fgtdaq01a04
+                DB_USERNAME=TU USERNAME
+                DB_PASSWORD=TU_PASSWORD</code>
+            </pre>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+            <li>Ejecuta las migraciones y los seeders:</li>
+            <pre><code>php artisan migrate:refresh --seed</code></pre>
 
-## Laravel Sponsors
+            <li>Configura <code>vite.config.js</code> dentro de <code>resources/js/app.js</code>:</li>
+            <pre><code>import { defineConfig } from 'vite';
+            import laravel from 'laravel-vite-plugin';
+            import vue from '@vitejs/plugin-vue';
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+            export default defineConfig({
+                plugins: [
+                    vue(),
+                    laravel({
+                        input: ['resources/css/app.css', 'resources/js/app.js'],
+                        refresh: true
+                    }),
+                ],
+            });</code></pre>
 
-### Premium Partners
+            <li>Actualiza la configuración de axios en <code>resources/js/app.js</code> para el entorno local:</li>
+            <pre><code>axios.defaults.baseURL = 'http://127.0.0.1:8000/api';</code></pre>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+            <li>Inicia el servidor de desarrollo y el servidor de Laravel:</li>
+            <pre><code>php artisan serve</code></pre>
+            <pre><code>npm run dev</code></pre>
 
-## Contributing
+            <li>Accede a la aplicación desde tu navegador:</li>
+            <ul>
+                <li>Sitio principal: <a href="http://127.0.0.1:8000" target="_blank">http://127.0.0.1:8000</a></li>
+                <li>Panel de administración: <a href="http://127.0.0.1:8000/admin" target="_blank">http://127.0.0.1:8000/admin</a></li>
+            </ul>
+        </ol>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+        <h2>Utilización de la herramienta</h2>
+        <p>Una vez en la demo o en tu entorno local, se abrirá una ventana de chat. Comienza con un saludo (por ejemplo, "hola" o "hi") y recibirás un mensaje de bienvenida. Podrás interactuar eligiendo una categoría y ver los productos disponibles.</p>
+        <p>¡Es sencillo! Todo está diseñado para ser intuitivo y fácil de usar.</p>
 
-## Code of Conduct
+        <p>Para cualquier consulta o comentario, contáctame en <a href="mailto:salgadosb1986@gmail.com">salgadosb1986@gmail.com</a>. Te brindaré soporte en el menor tiempo posible.</p>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+        <p>¡Saludos!</p>
+    </body>
+</html>
