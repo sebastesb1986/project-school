@@ -55,7 +55,6 @@
 
         categories: [],
         selectedCategory: null,
-        categoryId: 0,
 
         // Config Datatables
         options: {
@@ -120,7 +119,6 @@
       },
       editCategory(rowData) {
         this.selectedUser = { ...rowData }; // Make a copy to avoid mutating original data
-        this.categoryId = rowData.id;
       },
       confirmDelete(id) {
 
