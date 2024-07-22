@@ -11,10 +11,8 @@ export default defineConfig({
         }),
     ],
     build: {
-        minify: true,
-        brotliSize: true,
-        sourcemap: false,
+        outDir: 'public/build/', // Asegúrate de que esta ruta coincida con la configuración de Laravel
         manifest: true,
-        outDir: 'public/build/',
+        // Otros ajustes de construcción según tus necesidades
     },
 });
