@@ -126,7 +126,6 @@ export default {
     data: {
       handler(newValue) {
         this.category = { ...newValue }; // Cargar y refresh datos en la ventana modal
-        console.log(this.category);
       },
       deep: true
     }

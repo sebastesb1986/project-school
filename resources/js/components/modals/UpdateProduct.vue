@@ -157,7 +157,6 @@ export default {
     data: {
       handler(newValue) {
         this.product = { ...newValue }; // Cargar y refresh datos en la ventana modal
-        console.log(this.product)
       },
       deep: true
     }
