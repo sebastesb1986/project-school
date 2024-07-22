@@ -18,7 +18,6 @@ class UserSeeder extends Seeder
         $data = [
 
             [
-                'id' => 1,
                 'name' => 'admin',
                 'email' => 'admin2024@gmail.com',
                 'phone' => '3003118989',
@@ -27,6 +26,6 @@ class UserSeeder extends Seeder
 
         ];
 
-        $created = $user->insert($data);
+        $user->insert($data);
     }
 }
