@@ -13,7 +13,7 @@ export default defineConfig({
         https: true, // Habilita HTTPS para el servidor de desarrollo
     },
     build: {
-        assetsDir: 'build/assets',
+        assetsDir: 'assets',
         outDir: 'public/build/', // Asegúrate de que esta ruta coincida con la configuración de Laravel
         manifest: 'manifest.json',
         // Otros ajustes de construcción según tus necesidades
