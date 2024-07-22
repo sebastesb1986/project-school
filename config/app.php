@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://salgado-school-30c338bdf4e3.herokuapp.com'),
 
     /*
     |--------------------------------------------------------------------------
