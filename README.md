@@ -47,7 +47,7 @@ php artisan jwt
 
 4. Copia el archivo `.env.example` a `.env` y configura tu entorno local:
 
-```plaintext
+\`\`\`plaintext
 DB_CONNECTION=mysql
 DB_HOST=TU HOST
 DB_PORT=TU PUERTO
@@ -90,6 +90,7 @@ npm run dev
 
 Sitio principal: http://127.0.0.1:8000
 Panel de administración: http://127.0.0.1:8000/admin
+\`\`\`
 
 10. Utilización de la herramienta
 
