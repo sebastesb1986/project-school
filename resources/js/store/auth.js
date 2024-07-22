@@ -43,7 +43,7 @@ export default {
     // Iniciar sesión
     async signIn ( {dispatch}, credentials) {
 
-        let response = await axios.post('login', credentials);
+        let response = await axios.post('/login', credentials);
         return dispatch('attempt', response.data.access_token);
 
     },
@@ -61,7 +61,7 @@ export default {
 
         try{
 
-            let response = await axios.get('auth/me');
+            let response = await axios.get('/auth/me');
 
             commit('SET_USER', response.data.logged_in);
 
@@ -78,7 +78,7 @@ export default {
     // Cerrar sesión
     signOut ( {commit} ){
 
-        return axios.post('auth/logout').then( ()=>{
+        return axios.post('/auth/logout').then( ()=>{
 
             commit('SET_TOKEN', null);
             commit('SET_USER', null);

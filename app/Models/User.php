@@ -50,42 +50,42 @@ class User extends Authenticatable implements JWTSubject
         ];
     }
 
-     // JWT
-     public function getJWTIdentifier()
-     {
-         return $this->getKey();
-     }
+    // JWT
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
 
-     /**
-      * Return a key value array, containing any custom claims to be added to the JWT.
-      *
-      * @return array
-      */
-     public function getJWTCustomClaims()
-     {
-         return [];
-     }
+    /**
+     * Return a key value array, containing any custom claims to be added to the JWT.
+    *
+    * @return array
+    */
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
 
-     // Encriptar contraseña
-     public function setPasswordAttribute($password)
-     {
+    // Encriptar contraseña
+    public function setPasswordAttribute($password)
+    {
 
-         if(!empty($password)){
+        if(!empty($password)){
 
-             if (Hash::needsRehash($password)) {
+            if (Hash::needsRehash($password)) {
 
-                 $this->attributes['password'] = Hash::make($password);
+                $this->attributes['password'] = Hash::make($password);
 
-             }
+            }
 
-             else {
+            else {
 
-                 $this->attributes['password'] = $password;
+                $this->attributes['password'] = $password;
 
-             }
+            }
 
-         }
+        }
 
-     }
+    }
 
 }
