@@ -64,10 +64,10 @@ php artisan jwt
 4. Copia el archivo `.env.example` a `.env` y configura tu entorno local:
 
 ```plaintext
-DB_CONNECTION=mysql
+DB_CONNECTION=pgsql # o el de tu preferencia
 DB_HOST=TU HOST
 DB_PORT=TU PUERTO
-DB_DATABASE=d48fgtdaq01a04
+DB_DATABASE=TU_DATABASE
 DB_USERNAME=TU USERNAME
 DB_PASSWORD=TU_PASSWORD
 
