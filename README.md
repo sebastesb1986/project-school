@@ -68,7 +68,7 @@ DB_PASSWORD=TU_PASSWORD
 
 php artisan key:generate
 
-php artisan jwt
+php artisan jwt:secret
 
 
 5. Ejecuta las migraciones y los seeders(usuario admin; como ejemplo: categorias y productos):
