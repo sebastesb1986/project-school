@@ -50,26 +50,25 @@ git clone https://github.com/sebastesb1986/project-school.git
 
 2. Genera la clave de la aplicación y realiza las instalaciones necesarias:
 
-php artisan key
+```plaintext
 composer install
+
 npm install
 
+3. Copia el archivo `.env.example` a `.env` y configura tu entorno local:
 
-3. Genera la clave secreta para JWT:
-
-php artisan vendor --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
-php artisan jwt
-
-
-4. Copia el archivo `.env.example` a `.env` y configura tu entorno local:
-
-```plaintext
 DB_CONNECTION=pgsql # o el de tu preferencia
 DB_HOST=TU HOST
 DB_PORT=TU PUERTO
 DB_DATABASE=TU_DATABASE
 DB_USERNAME=TU USERNAME
 DB_PASSWORD=TU_PASSWORD
+
+4. Genera la clave secreta para JWT y de laravel:
+
+php artisan key:generate
+
+php artisan jwt
 
 
 5. Ejecuta las migraciones y los seeders(usuario admin; como ejemplo: categorias y productos):
