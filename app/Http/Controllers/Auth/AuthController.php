@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 
 class AuthController extends Controller
 {
@@ -18,10 +19,9 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function login(Request $request)
+    public function login(UserRequest $request)
     {
-        $credentials = request(['email', 'password']);
-
+        $credentials = $request->validated();
 
         if (! $token = auth('api')->attempt($credentials)) {
             return response()->json(['error' => 'Usuario NO registrado o Información incorrecta'], 401);

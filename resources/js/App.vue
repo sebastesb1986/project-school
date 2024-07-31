@@ -6,7 +6,7 @@
 <script>
 
 import { mapGetters, mapActions } from 'vuex';
-import NavigationNav from './NavigationNav.vue';
+import NavigationNav from '@/components/NavigationNav.vue';
 
 export default {
     components: { NavigationNav },
@@ -14,9 +14,8 @@ export default {
 
         ...mapGetters({
 
-        authenticated: 'auth/authenticated',
-        user: 'auth/user'
-
+            authenticated: 'auth/authenticated',
+            user: 'auth/user'
 
         })
     },

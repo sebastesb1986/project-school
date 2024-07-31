@@ -22,10 +22,12 @@
         "datatables.net-vue3": "^3.0.2",
         "jszip": "^3.10.1",
         "pdfmake": "^0.2.10",
+        "vee-validate": "^4.13.2",
         "vue": "^3.4.33",
         "vue-loader": "^17.4.2",
         "vue-router": "^4.4.0",
         "vue-sweetalert2": "^5.0.11",
-        "vuex": "^4.1.0"
+        "vuex": "^4.1.0",
+        "yup": "^1.4.0"
     }
 }

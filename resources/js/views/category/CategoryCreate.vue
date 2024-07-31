@@ -10,7 +10,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="description" class="col-form-label">Descripción</label>
-                        <input type="text" class="form-control" id="description" v-model="category.description" :class="{ 'is-invalid': validation.errors.description && validation.errors.description.length > 0 }" @input="clearError('email')">
+                        <input type="text" class="form-control" id="description" v-model="category.description" :class="{ 'is-invalid': validation.errors.description && validation.errors.description.length > 0 }" @input="clearError('description')">
                         <p class="text-danger" v-if="validation.errors.description && validation.errors.description.length > 0">{{ validation.errors.description[0] }}</p>
                     </div>
 

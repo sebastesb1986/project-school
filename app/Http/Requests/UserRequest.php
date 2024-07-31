@@ -5,6 +5,8 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class UserRequest extends FormRequest
 {
@@ -24,10 +26,29 @@ class UserRequest extends FormRequest
     public function rules(): array
     {
         $rules = [
-            'name' => 'required|string|max:255',
-            'email' => 'required',
-            'phone' => 'required|min:7',
+            'name' => 'nullable|string|max:255',
+            'email' => 'required|exists:users,email',
+            'phone' => 'nullable|min:7',
+            'password' => [
+                'required',
+                'min:6',
+                function ($attribute, $value, $fail) {
+                    // Obtén el correo electrónico
+                    $email = $this->email;
+
+                    // Busca al usuario por el correo electrónico
+                    $user = User::where('email', $email)->first();
+
+                    if($user){
+                        // Verifica la contraseña
+                        if (!Hash::check($value, $user->password)) {
+                            $fail('La contraseña ingresada es incorrecta');
+                        }
+                    }
+                },
+            ],
         ];
+
         return $rules;
     }
 
@@ -38,6 +59,7 @@ class UserRequest extends FormRequest
             'name'=> 'Nombre',
             'email' => 'Correo electrónico',
             'phone'=> 'Telefóno',
+            'password' => 'Contraseña'
 
         ];
     }
@@ -47,10 +69,10 @@ class UserRequest extends FormRequest
 
         return [
 
-            'name.required'=> 'El nombre de usuario es requerido',
             'email.required'=> 'El correo electrónico del usuario es requerida',
-            'phone.required'=> 'El telefono del usuario es requerido',
-            'phone.min'=> 'La cantidad de digitos para teléfono debe ser mínimo 7',
+            'email.exists'=> 'El correo electrónico no se encuentra registrado',
+            'password.required'=> 'La contraseña del usuario es requerido',
+            'password.min'=> 'La cantidad de digitos para la contraseña debe ser mínimo :min',
 
         ];
     }

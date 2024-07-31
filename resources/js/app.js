@@ -4,7 +4,7 @@ import { createApp } from 'vue';
 import axios from 'axios';
 import router from './router';
 import store from './store';
-import App from './components/App.vue';
+import App from './App.vue';
 import '@/store/subscriber';
 import VueSweetalert2 from 'vue-sweetalert2';
 
@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
 
-axios.defaults.baseURL = 'https://salgado-school-30c338bdf4e3.herokuapp.com/api';
+axios.defaults.baseURL = 'http://127.0.0.1:8000/api';
 
 store.dispatch('auth/attempt', localStorage.getItem('token'))
 .then( ()=> {

@@ -63,7 +63,7 @@
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
-
+  name: 'NavigationNav',
   data() {
 
     return {

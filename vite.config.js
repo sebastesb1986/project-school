@@ -7,9 +7,10 @@ export default defineConfig({
         vue(),
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
+            refresh: true
         }),
     ],
-    server: {
+    /*server: {
         https: true, // Habilita HTTPS para el servidor de desarrollo
     },
     build: {
@@ -17,5 +18,5 @@ export default defineConfig({
         outDir: 'public/build/', // Asegúrate de que esta ruta coincida con la configuración de Laravel
         manifest: 'manifest.json',
         // Otros ajustes de construcción según tus necesidades
-    },
+    },*/
 });
