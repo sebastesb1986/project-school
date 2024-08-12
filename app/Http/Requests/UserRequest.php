@@ -34,7 +34,7 @@ class UserRequest extends FormRequest
                 'min:6',
                 function ($attribute, $value, $fail) {
                     // Obtén el correo electrónico
-                    $email = $this->email;
+                    $email = $this->input('email');
 
                     // Busca al usuario por el correo electrónico
                     $user = User::where('email', $email)->first();
