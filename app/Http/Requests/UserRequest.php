@@ -39,12 +39,11 @@ class UserRequest extends FormRequest
                     // Busca al usuario por el correo electrónico
                     $user = User::where('email', $email)->first();
 
-                    if($user){
-                        // Verifica la contraseña
-                        if (!Hash::check($value, $user->password)) {
-                            $fail('La contraseña ingresada es incorrecta');
-                        }
+                    // Verifica la contraseña
+                    if ($user && !Hash::check($value, $user->password)) {
+                        $fail('La contraseña ingresada es incorrecta');
                     }
+
                 },
             ],
         ];
