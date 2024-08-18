@@ -29,23 +29,7 @@ class UserRequest extends FormRequest
             'name' => 'nullable|string|max:255',
             'email' => 'required|exists:users,email',
             'phone' => 'nullable|min:7',
-            'password' => [
-                'required',
-                'min:6',
-                function ($attribute, $value, $fail) {
-                    // Obtén el correo electrónico
-                    $email = $this->input('email');
-
-                    // Busca al usuario por el correo electrónico
-                    $user = User::where('email', $email)->first();
-
-                    // Verifica la contraseña
-                    if ($user && !Hash::check($value, $user->password)) {
-                        $fail('La contraseña ingresada es incorrecta');
-                    }
-
-                },
-            ],
+            'password' => 'required|min:6'
         ];
 
         return $rules;
